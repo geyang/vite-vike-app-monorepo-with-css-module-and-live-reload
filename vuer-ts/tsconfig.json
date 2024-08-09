@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "module": "ES2022",
+    "moduleResolution": "bundler",
+    "target": "ES2020",
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ESNext"
+    ],
+    "types": [
+      "vite/client",
+      "node"
+    ],
+    "typeRoots": [
+      "./node_modules/@types/",
+      "./types",
+      "./node_modules"
+    ],
+    "jsx": "react-jsx",
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "noEmit": false,
+    "plugins": [
+      {
+        "name": "typescript-plugin-css-modules"
+      }
+    ]
+  }
+}
