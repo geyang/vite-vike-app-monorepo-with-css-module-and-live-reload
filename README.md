@@ -37,6 +37,6 @@ together also requires manual override to the chuncks, by setting
 stacoverflow post: [Two steps to include css module in js 
 bundle](https://stackoverflow.com/a/71304592/1560241)
 
-## Copy Right
+## Copyright
 
 Built with :heart: by Ge Yang @ MIT CSAIL.
