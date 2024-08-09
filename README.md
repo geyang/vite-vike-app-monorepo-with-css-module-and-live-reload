@@ -39,4 +39,4 @@ bundle](https://stackoverflow.com/a/71304592/1560241)
 
 ## Copy Right
 
-Built with <3 by Ge Yang @ MIT CSAIL.
+Built with :heart: by Ge Yang @ MIT CSAIL.
