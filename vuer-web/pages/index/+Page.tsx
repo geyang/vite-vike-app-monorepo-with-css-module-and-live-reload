@@ -1,22 +1,24 @@
-import { Counter } from '../../components/Counter.js';
+import React, { Suspense, useEffect, useMemo } from 'react';
+import {Helmet} from 'react-helmet-async/lib/index.js';
+import { SimpleComponent } from '@vuer-ai/vuer';
 
-export default Page;
-import React from 'react';
-import { Helmet } from 'react-helmet-async';
-import { className } from './index.module.scss';
-import { SimpleComponent } from '@vuer-ai/vuer-dev';
+export default function Page() {
+  const isSSR = typeof window === 'undefined';
 
-function Page() {
   return (
-    <>
+    <div>
       <Helmet>
-        <title>Vuer (Technical Preview)</title>
+        <title>Vuer | Stereo Video and WebRTC Demo</title>
       </Helmet>
-      <div className={className}>
-        Does this work.
-        <Counter />
-        <SimpleComponent />
-      </div>
-    </>
+      <main>
+        <Suspense fallback={<div>Loading...</div>}>
+          {/*{isSSR ? null : (*/}
+          {/*<SimpleProvider>*/}
+          <SimpleComponent />
+          {/*</SimpleProvider>*/}
+          {/*)}*/}
+        </Suspense>
+      </main>
+    </div>
   );
 }

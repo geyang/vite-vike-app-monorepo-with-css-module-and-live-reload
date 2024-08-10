@@ -1,11 +1,11 @@
 // https://vike.dev/onRenderHtml
-import { HelmetProvider } from 'react-helmet-async';
-import { renderToStream } from 'react-streaming/server';
 import React from 'react';
+import { renderToStream } from 'react-streaming/server';
 import { escapeInject } from 'vike/server';
+import type { OnRenderHtmlAsync } from 'vike/types';
+import { HelmetProvider } from 'react-helmet-async/lib/index.js';
 import { Layout } from './Layout';
 import { getPageTitle } from './getPageTitle';
-import type { OnRenderHtmlAsync } from 'vike/types';
 
 export const onRenderHtml: OnRenderHtmlAsync = async (pageContext): ReturnType<OnRenderHtmlAsync> => {
   const { Page } = pageContext;
