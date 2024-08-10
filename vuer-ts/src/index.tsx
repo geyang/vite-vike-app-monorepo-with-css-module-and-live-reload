@@ -1,5 +1,5 @@
 import { createContext, PropsWithChildren, useContext } from 'react';
-import { Helmet } from 'react-helmet-async/lib/index.js';
+import { Helmet, HelmetProvider } from '@vuer-ai/react-helmet-async';
 
 const simpleContext = createContext({ value: false });
 export const SimpleProvider = ({ children }: PropsWithChildren) => {

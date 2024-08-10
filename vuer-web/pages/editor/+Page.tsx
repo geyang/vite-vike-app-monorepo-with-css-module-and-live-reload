@@ -1,5 +1,5 @@
 // import React, { Suspense, useEffect, useMemo } from 'react';
-// import { Helmet, HelmetProvider } from 'react-helmet-async';
+// import { Helmet, HelmetProvider } from '@vuer-ai/react-helmet-async';
 // // import './index.scss';
 // import {
 //   SimpleComponent,

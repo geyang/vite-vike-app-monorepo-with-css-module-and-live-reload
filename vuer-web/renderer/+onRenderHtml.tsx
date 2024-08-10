@@ -3,7 +3,7 @@ import React from 'react';
 import { renderToStream } from 'react-streaming/server';
 import { escapeInject } from 'vike/server';
 import type { OnRenderHtmlAsync } from 'vike/types';
-import { HelmetProvider } from 'react-helmet-async/lib/index.js';
+import { HelmetProvider } from '@vuer-ai/react-helmet-async';
 import { Layout } from './Layout';
 import { getPageTitle } from './getPageTitle';
 

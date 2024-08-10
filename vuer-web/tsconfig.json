@@ -1,20 +1,22 @@
 {
   "compilerOptions": {
-    "strict": true,
-    "module": "ES2022",
-    "moduleResolution": "bundler",
-    "target": "ES2020",
-    //    "baseUrl": "./",
-    //    "paths": {
-    //      "@vuer-ai/vuer": [
-    //        "../vuer-ts/src/index.tsx"
-    //      ]
-    //    },
     "lib": [
       "DOM",
       "DOM.Iterable",
       "ESNext"
     ],
+    "target": "ES2021",
+
+    "strict": true,
+    "module": "Node16",
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "rootDir": "./",
+    "outDir": "./dist",
+    "declarationDir": "types",
+
     "types": [
       "vite/client",
       "node"
@@ -24,9 +26,13 @@
       "./types",
       "./node_modules"
     ],
+    //    "baseUrl": "./",
+    //    "paths": {
+    //      "@vuer-ai/vuer": [
+    //        "../vuer-ts/src/index.tsx"
+    //      ]
+    //    },
     "jsx": "react-jsx",
-    "skipLibCheck": true,
-    "esModuleInterop": true,
     "allowJS": true,
     "plugins": [
       {

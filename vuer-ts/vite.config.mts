@@ -5,7 +5,8 @@ import react from '@vitejs/plugin-react-swc';
 import { cjsInterop } from 'vite-plugin-cjs-interop';
 import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js';
 import dts from 'vite-plugin-dts';
-import path from 'node:path';
+import * as path from 'node:path';
+import pkg from './package.json';
 
 export default {
   plugins: [
@@ -20,17 +21,18 @@ export default {
     cjsInterop({
       // List of CJS dependencies that require interop
       dependencies: [
-        'react-helmet-async',
+        // 'react-helmet-async',
       ],
     }),
     dts({ strictOutput: false }),
   ],
   root: 'src',
   build: {
+    minify: false, // <-- this is the important part
+    sourcemap: true,
     outDir: path.resolve(__dirname, './dist'),
     emptyOutDir: true,
     // cssCodeSplit: true,
-    minify: false, // <-- this is the important part
     lib: {
       name: 'vuer',
       entry: {
@@ -43,22 +45,11 @@ export default {
       },
     },
     rollupOptions: {
-      external: [
-        'react',
-        'react-dom',
-        'react/jsx-runtime',
-        'react-helmet-async',
-        'react-helmet-async/*',
-        'react-helmet-async/**/*.js',
-      ],
+      external: Object.keys(pkg.peerDependencies),
       output: {
         /** this is to make sure css modules are included as part of a
          * single javascript file. */
         manualChunks: undefined,
-        globals: {
-          react: 'React',
-          'react-dom': 'ReactDOM',
-        },
       },
     },
   },

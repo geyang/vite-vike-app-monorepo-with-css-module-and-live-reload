@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "private": true,
   "licence": "UNLICENSED",
-  "type": "module",
   "scripts": {
     "dev": "vite --force",
     "dev-verbose": "DEBUG=vike:error vite --force",
@@ -24,6 +23,8 @@
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react-swc": "^3.6.0",
+    "@vuer-ai/react-helmet-async": "^2.0.6",
+    "@vuer-ai/vuer": "../vuer-ts",
     "cross-fetch": "^4.0.0",
     "leva": "^0.9.35",
     "node-fetch": "^3.3.2",

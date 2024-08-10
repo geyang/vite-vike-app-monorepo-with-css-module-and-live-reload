@@ -2,8 +2,7 @@
   "name": "@vuer-ai/vuer",
   "version": "0.0.1",
   "type": "module",
-  "main": "/dist/index.umd.js",
-  "module": "/dist/index.mjs",
+  "main": "/dist/index.mjs",
   "types": "/dist/src/index.d.ts",
   "exports": {
     ".": {
@@ -19,9 +18,21 @@
     "preview": "vite build && vite preview"
   },
   "peerDependencies": {
+    "@react-three/drei": "^9.109.5",
+    "@react-three/fiber": "^8.16.8",
+    "@react-three/xr": "5.7.1",
+    "@vuer-ai/mujoco-ts": "^0.0.12-rc4",
+    "leva": "^0.9.35",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "react-helmet-async": "^2.0.5"
+    "react-gamepads": "^1.0.0",
+    "@vuer-ai/react-helmet-async": "^2.0.6",
+    "react-remark": "^2.1.0",
+    "react-streaming": "^0.3.42",
+    "react-use-websocket": "^4.8.1",
+    "react-usestateref": "^1.0.9",
+    "three": "^0.167.0",
+    "urdf-loader": "^0.12.1"
   },
   "devDependencies": {
     "@brillout/test-e2e": "^0.5.33",
@@ -49,9 +60,9 @@
     "@react-three/drei": "^9.109.5",
     "@react-three/fiber": "^8.16.8",
     "@react-three/xr": "5.7.1",
-    "@swc/plugin-emotion": "^3.0.10",
     "@vitejs/plugin-react-swc": "^3.6.0",
     "@vuer-ai/mujoco-ts": "^0.0.12-rc4",
+    "@vuer-ai/react-helmet-async": "^2.0.6",
     "cross-fetch": "^4.0.0",
     "js-yaml": "^4.1.0",
     "leva": "^0.9.35",
@@ -64,7 +75,6 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-gamepads": "^1.0.0",
-    "react-helmet-async": "^2.0.5",
     "react-remark": "^2.1.0",
     "react-streaming": "^0.3.42",
     "react-use-websocket": "^4.8.1",

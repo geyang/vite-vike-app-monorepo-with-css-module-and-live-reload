@@ -1,12 +1,12 @@
-import React, { Suspense, useEffect, useMemo } from 'react';
-import {Helmet} from 'react-helmet-async/lib/index.js';
+import { Suspense, useEffect, useMemo } from 'react';
+import { Helmet, HelmetProvider } from '@vuer-ai/react-helmet-async';
 import { SimpleComponent } from '@vuer-ai/vuer';
 
 export default function Page() {
   const isSSR = typeof window === 'undefined';
 
   return (
-    <div>
+    <HelmetProvider>
       <Helmet>
         <title>Vuer | Stereo Video and WebRTC Demo</title>
       </Helmet>
@@ -19,6 +19,6 @@ export default function Page() {
           {/*)}*/}
         </Suspense>
       </main>
-    </div>
+    </HelmetProvider>
   );
 }

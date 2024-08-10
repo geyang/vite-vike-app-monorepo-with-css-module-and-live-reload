@@ -1,14 +1,24 @@
 {
   "compilerOptions": {
-    "strict": true,
-    "module": "ES2022",
-    "moduleResolution": "bundler",
-    "target": "ES2020",
     "lib": [
       "DOM",
       "DOM.Iterable",
       "ESNext"
     ],
+    "target": "ES2021",
+
+    "strict": true,
+    "module": "Node16",
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "declarationDir": "types",
+
     "types": [
       "vite/client",
       "node"
@@ -19,8 +29,6 @@
       "./node_modules"
     ],
     "jsx": "react-jsx",
-    "skipLibCheck": true,
-    "esModuleInterop": true,
     "noEmit": false,
     "plugins": [
       {
