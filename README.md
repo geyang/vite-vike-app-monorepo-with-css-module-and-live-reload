@@ -6,6 +6,16 @@
 yarn
 ```
 
+Adding the symbolic link
+```shell
+rm -rf vuer-web/node_modules/@vuer-ai/vuer
+mkdir -p vuer-web/node_modules/@vuer-ai/vuer
+ln -s $(realpath vuer-ts/src) vuer-web/node_modules/@vuer-ai/vuer/src
+# the dist have to be a copied folder. It can not be a symbolic link
+cp -r $(realpath vuer-ts/dist) vuer-web/node_modules/@vuer-ai/vuer/dist
+ln -s $(realpath vuer-ts/package.json) vuer-web/node_modules/@vuer-ai/vuer/package.json
+```
+
 ## Build
 
 ```

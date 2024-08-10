@@ -1,11 +1,11 @@
-import { ConfigEnv, defineConfig, UserConfig } from 'vite';
+import { ConfigEnv, defineConfig, UserConfig, ViteDevServer } from 'vite';
 import mdx from '@mdx-js/rollup';
 import vike from 'vike/plugin';
 import react from '@vitejs/plugin-react-swc';
 // @ts-ignore: types unavailable.
 import { cjsInterop } from 'vite-plugin-cjs-interop';
 import * as path from 'node:path';
-// import path from 'node:path';
+import { pluginWatchNodeModules } from './plugins';
 
 export const configFn = ({ command }: ConfigEnv) => {
   console.log('command', command);
@@ -24,6 +24,7 @@ export const configFn = ({ command }: ConfigEnv) => {
         // List of CJS dependencies that require interop
         dependencies: [],
       }),
+      pluginWatchNodeModules(["@vuer-ai/vuer"])
     ],
     resolve: {
       preserveSymlinks: true,
@@ -31,6 +32,18 @@ export const configFn = ({ command }: ConfigEnv) => {
         '@vuer-ai/vuer': path.resolve(__dirname, './node_modules/@vuer-ai/vuer/src/index.tsx'),
       },
     },
+    // server: {
+    //   watch: {
+    //     ignored: ['!./node_modules/@vuer-ai/vuer/**']
+    //   }
+    // },
+    // optimizeDeps: {
+    //   resolveSymlinks: true,
+    //   exclude: [
+    //     '@vuer-ai/vuer',
+    //     './node_modules/@vuer-ai/vuer/src/*',
+    //   ],
+    // },
     build: {
       minify: false,
       sourcemap: true,

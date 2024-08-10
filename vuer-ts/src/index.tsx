@@ -1,7 +1,8 @@
 import { createContext, PropsWithChildren, useContext } from 'react';
-import { Helmet, HelmetProvider } from '@vuer-ai/react-helmet-async';
+import { Helmet } from '@vuer-ai/react-helmet-async';
 
 const simpleContext = createContext({ value: false });
+
 export const SimpleProvider = ({ children }: PropsWithChildren) => {
   return <simpleContext.Provider value={{ value: true }}>
     {children}
@@ -9,18 +10,22 @@ export const SimpleProvider = ({ children }: PropsWithChildren) => {
 
 };
 export const useSimple = () => {
-  // return useContext(simpleContext);
+  return useContext(simpleContext);
 };
 
 export const SimpleComponent = () => {
 
-  // const simple = useSimple();
+  const simple = useSimple();
+
+  console.log('simple', simple);
 
   return <div>
     <Helmet>
-      <title>Simple Component</title>
+      <title>Simple Change Wow this works</title>
     </Helmet>
     <h1>Simple Component</h1>
-    {/*<p>simple value is: {simple.value}</p>*/}
+    <p>
+      simple value is: {simple?.value ? 'this is amazing' : 'false'}
+    </p>
   </div>;
 };
