@@ -24,26 +24,14 @@ export const configFn = ({ command }: ConfigEnv) => {
         // List of CJS dependencies that require interop
         dependencies: [],
       }),
-      pluginWatchNodeModules(["@vuer-ai/vuer"])
+      pluginWatchNodeModules(['@vuer-ai/vuer']),
     ],
     resolve: {
       preserveSymlinks: true,
       alias: {
-        '@vuer-ai/vuer': path.resolve(__dirname, './node_modules/@vuer-ai/vuer/src/index.tsx'),
+        // '@vuer-ai/vuer': path.resolve(__dirname, './node_modules/@vuer-ai/vuer/src/index.tsx'),
       },
     },
-    // server: {
-    //   watch: {
-    //     ignored: ['!./node_modules/@vuer-ai/vuer/**']
-    //   }
-    // },
-    // optimizeDeps: {
-    //   resolveSymlinks: true,
-    //   exclude: [
-    //     '@vuer-ai/vuer',
-    //     './node_modules/@vuer-ai/vuer/src/*',
-    //   ],
-    // },
     build: {
       minify: false,
       sourcemap: true,
@@ -57,6 +45,14 @@ export const configFn = ({ command }: ConfigEnv) => {
       },
     },
   } as UserConfig;
+
+  if (!!process.env.DEVELOP) {
+    console.log('dev mode is ON, hot reloading');
+    config.resolve.alias['@vuer-ai/vuer'] = path.resolve(__dirname, './node_modules/@vuer-ai/vuer/src/index.tsx');
+  } else {
+    console.info("dev model is OFF. Hot reloading disabled. To enable, set env.DEVELOP to truthy value.")
+  }
+
   return config;
 };
 

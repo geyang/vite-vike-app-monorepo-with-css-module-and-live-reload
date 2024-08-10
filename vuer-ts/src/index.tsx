@@ -17,15 +17,13 @@ export const SimpleComponent = () => {
 
   const simple = useSimple();
 
-  console.log('simple', simple);
-
   return <div>
     <Helmet>
       <title>Simple Change Wow this works</title>
     </Helmet>
     <h1>Simple Component</h1>
     <p>
-      simple value is: {simple?.value ? 'this is amazing' : 'false'}
+      simple value is: {simple?.value ? 'true' : 'false'}
     </p>
   </div>;
 };
